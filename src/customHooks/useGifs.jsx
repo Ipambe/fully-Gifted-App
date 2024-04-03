@@ -1,6 +1,8 @@
 import { useEffect, useState, useCallback } from 'react'
 import axios from 'axios'
-import { API_KEY } from '@config'
+// import { API_KEY } from '@config'
+// import.meta.env.VITE_API_KEY
+const API_KEY = import.meta.env.VITE_API_KEY
 // import trendingGifs from '@api/TRENDING.json'
 
 export function useGifs () {
