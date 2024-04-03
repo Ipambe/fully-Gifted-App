@@ -1,14 +1,16 @@
 import React, { useCallback } from 'react'
-import PropTypes from 'prop-types'
 import SearchSvg from './SearchSvg'
+import PropTypes from 'prop-types'
 
-function Form ({ setSearch }) {
-  const handleFormSubmit = useCallback((e) => {
+function Form ({ searchGifs }) {
+  const handleFormSubmit = useCallback(async (e) => {
     e.preventDefault()
-    e.target.gif.focus()
-    if (e.target.gif.value.trim() === '') return
-    setSearch(e.target.gif.value)
-  }, [setSearch])
+    const input = e.target.gif
+    if (input.value.trim() === '') return
+    await searchGifs(input.value)
+    input.focus()
+    e.target.reset()
+  }, [searchGifs])
 
   return (
     <form onSubmit={handleFormSubmit} className='mt-12 flex justify-between border rounded-3xl border-white overflow-hidden  w-4/5 md:w-2/3 lg:w-1/2'>
@@ -23,5 +25,5 @@ function Form ({ setSearch }) {
 export default Form
 
 Form.propTypes = {
-  setSearch: PropTypes.func.isRequired
+  searchGifs: PropTypes.func.isRequired
 }

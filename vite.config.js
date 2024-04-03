@@ -10,7 +10,8 @@ export default defineConfig({
       '@assets': '/src/assets',
       '@public': '/public',
       '@api': '/src/API',
-      '@config': '/config.js'
+      '@config': '/config.js',
+      '@hooks': '/src/customHooks'
     }
   }
 })
