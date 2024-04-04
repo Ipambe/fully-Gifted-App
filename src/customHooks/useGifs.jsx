@@ -25,6 +25,7 @@ export function useGifs () {
     // fetchGifs('https://api.giphy.com/v1/gifs/trending?api_key=4fDxWVoQHyKTJ1DI68RDBkHA9OGpKbUi&limit=25&offset=0&rating=g&bundle=messaging_non_clips')
     ;(async () => {
       const data = await fetchGifs(`https://api.giphy.com/v1/gifs/trending?api_key=${API_KEY}&limit=50&offset=0&rating=g&bundle=messaging_non_clips`)
+      console.log(data)
       setAllGifs(data)
     })()
     setSearch('')

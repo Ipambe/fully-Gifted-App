@@ -4,7 +4,7 @@ import Form from './Form'
 import GifGrid from './GifGrid'
 import ModalGif from './ModalGif'
 import Pagination from './Pagination'
-import { useGifs } from '@hooks/useGifs'
+import { useGifs } from '../customHooks/useGifs'
 
 // `https://api.giphy.com/v1/gifs/categories?api_key=${API_KEY}`
 
